@@ -10,6 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
     val TAG:String = MainActivity::class.qualifiedName.toString()
+
+    companion object{
+        val EMAIL_KEY="text_email"
+        val MESSAGE_KEY="text_message"
+    }
+
     lateinit var bt: Button
     lateinit var text: EditText
     lateinit var textDispl: EditText
@@ -35,8 +41,8 @@ class MainActivity : AppCompatActivity() {
             var emailDispl:String = textDispl.text.toString()
 
             var inten = Intent(this,SecondActivity::class.java)
-            inten.putExtra("mess",email)
-            inten.putExtra("mess2",emailDispl)
+            inten.putExtra(EMAIL_KEY,email)
+            inten.putExtra(MESSAGE_KEY,emailDispl)
             startActivity(inten)
             Log.d(TAG,"$email --- $emailDispl")
         }
