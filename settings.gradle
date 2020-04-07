@@ -1,0 +1,2 @@
+rootProject.name='eventClickListener'
+include ':app'
